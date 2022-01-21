@@ -8,7 +8,7 @@ import {
     Wrapper,
 } from './weatherPage.styled'
 import { Header } from '../../components/Header/Header'
-import { CityList } from '../../CityList'
+import { CityList } from '../../cityList'
 import { apiRequest } from '../../mock'
 import { Input } from '@mui/material'
 export const WeatherPage = () => {
