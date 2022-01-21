@@ -33,4 +33,3 @@ export const Temp = styled.div`
 `
 export const Humidity = styled.div`
     padding: 5px 20px;
-`

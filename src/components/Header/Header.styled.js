@@ -8,3 +8,4 @@ export const Logo = styled.div`
     font-family: 'Lucida Sans Unicode';
     font-size: 25px;
 `
+

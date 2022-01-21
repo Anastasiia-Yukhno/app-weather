@@ -37,5 +37,5 @@ export const CardCity = ({ data }) => {
                 </Link>
             </Card>
         </CardItem>
-    )
-}
+    );
+};
