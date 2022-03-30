@@ -1,4 +1,4 @@
-export const CityList = [
+export const CityNameList = [
     'Kyiv',
     'Kharkiv',
     'Odesa',

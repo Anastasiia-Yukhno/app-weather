@@ -1,18 +1,22 @@
-import { useEffect, useState } from 'react'
 import {
     CityName,
     WeatherImg,
     WeatherDescription,
     Card,
     CardItem,
-    Pressure,
     Temp,
-    Humidity,
     Weather,
+    UpdateButton,
+    CardFooter,
+    CardHeader,
+    RemoveButton,
 } from './Card.styled'
 import { Link } from 'react-router-dom'
-import { DetailedWeather } from '../../pages/detailedWeather/detailedWeather'
-export const CardCity = ({ data }) => {
+import { FaTemperatureHigh } from 'react-icons/fa'
+import { GrUpdate } from 'react-icons/gr'
+import { TiDeleteOutline } from 'react-icons/ti'
+
+export const CardCity = ({ data, cityInfoUpdate, removeCard }) => {
     const weatherImg =
         `http://openweathermap.org/img/wn/` +
         data?.weather?.[0].icon +
@@ -26,14 +30,30 @@ export const CardCity = ({ data }) => {
                     state={{ cityName: data?.name }}
                     style={{ textDecoration: 'none', color: 'black' }}
                 >
-                    <CityName>{data?.name}</CityName>
-                    <Temp>{Math.round(data?.main?.temp)}&#176;</Temp>
+                    <CardHeader>
+                        <CityName>{data?.name}</CityName>
+                        <RemoveButton onClick={(e) => removeCard(e, data.name)}>
+                            <TiDeleteOutline />
+                        </RemoveButton>
+                    </CardHeader>
+
                     <Weather>
                         <WeatherImg src={weatherImg} />
                         <WeatherDescription>
                             {data?.weather?.[0].description}
                         </WeatherDescription>
                     </Weather>
+                    <CardFooter>
+                        <Temp>
+                            <FaTemperatureHigh />
+                            {Math.round(data?.main?.temp)}&#176;
+                        </Temp>
+                        <UpdateButton
+                            onClick={(e) => cityInfoUpdate(e, data.name)}
+                        >
+                            <GrUpdate />
+                        </UpdateButton>
+                    </CardFooter>
                 </Link>
             </Card>
         </CardItem>

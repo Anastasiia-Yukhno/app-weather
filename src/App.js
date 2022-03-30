@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import { WeatherPage } from './pages/weather/WeatherPage'
-import { DetailedWeather } from './pages/detailedWeather/detailedWeather'
+import { WeatherPage } from './pages/WeatherPage/WeatherPage'
+import { DetailedWeather } from './pages/DetailedWeather/DetailedWeather'
+import { store } from './state/store'
+window.store = store
 
 function App() {
     return (
